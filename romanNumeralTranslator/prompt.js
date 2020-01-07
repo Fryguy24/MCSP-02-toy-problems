@@ -26,6 +26,32 @@ var DIGIT_VALUES = {
   M: 1000
 };
 
+// subtract if smaller numeral appears before a larger one.
+// Smaller ones will most likely appear before larger ones.
+// Convert RN to a number.
+
 var translateRomanNumeral = function(romanNumeral) {
   // TODO: Implement me!
+  let result = 0;
+  // Split input at each character
+  let separate = romanNumeral.split(' ');
+  // Iterate through split input
+  for (let i = 0; i < separate.length; i++) {
+    //   Save current letter and next letter into variables
+    let smallerLetter = DIGIT_VALUE[separate[i]];
+    let largerLetter = DIGIT_VALUE[separate[i+1]];
+    // Return NULL if input is not a string.
+    if (smallerLetter === undefined) {
+      return `null`;
+    } else {
+      if (smallerLetter < largerLetter) {
+        // Add current letter minus next letter to result var
+        result += largerLetter - smallerLetter;
+        // Double increment count to skip next letter
+        i++;
+      } else {
+        result += smaller;
+      }
+    }
+  }
 };
