@@ -25,11 +25,11 @@ const isBalanced = str => {
 
     for (let i = 0; i < str.length; i++) {
 
-        // If character is an opening brace add it to a stack
+        // If character is an opening brace add it to a stack/array
         if (str[i] === '(' || str[i] === '{' || str[i] === '[' ) {
             array.push(str[i]);
         }
-        //  If that character is a closing brace, pop from the stack.
+        //  If that character is a closing brace, pop from the stack/array.
         else {
             let last = array.pop();
 
