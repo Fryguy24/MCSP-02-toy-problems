@@ -2,5 +2,10 @@
 // Ex: lastIndexOf(4, [2,3,6,4,7,4,9]) returns 5
 
 function lastIndexOf(target, array) {
-  //solution code here
+  newArr = [];
+  index = array.IndexOf(target)
+  while (index != -1) {
+    newArr.push(index);
+    index = array.indexOf(target, index + 1);
+  }
 }
